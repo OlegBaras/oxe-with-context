@@ -1,5 +1,4 @@
 import "../css/Card.css";
-import "../css/Card.css";
 
 //Card Component
 export default function Card({ name, state }) {

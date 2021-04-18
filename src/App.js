@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import "./App.css";
 import CardsList from "./components/CardsList";
 import Modal from "./components/Modal";
 import { CardsContext } from "./context/cardsContext";
+import "./App.css";
 
 function App() {
+  //getting states from CardsContext
   const { showModal, setShowModal, addPost, addNewRover } = useContext(
     CardsContext
   );

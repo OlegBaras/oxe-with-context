@@ -32,6 +32,7 @@ const CardsProvider = ({ children }) => {
   //Trigger Modal
   const addPost = () => {
     setShowModal(!showModal);
+    setInputValue("");
   };
 
   return (
