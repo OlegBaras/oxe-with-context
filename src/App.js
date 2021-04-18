@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import "./App.css";
+import CardsList from "./components/CardsList";
+import Modal from "./components/Modal";
+import { CardsContext } from "./context/cardsContext";
 
 function App() {
+  const { showModal, setShowModal, addPost, addNewRover } = useContext(
+    CardsContext
+  );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Mars Rovers</h1>
       </header>
+      <main>
+        <CardsList />
+      </main>
+      <footer>
+        <button className="add-post-button" onClick={addPost}>
+          New Rover
+        </button>
+      </footer>
+      {showModal ? (
+        <Modal setShowModal={setShowModal} addNewRover={addNewRover} />
+      ) : null}
     </div>
   );
 }
